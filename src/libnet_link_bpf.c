@@ -97,7 +97,7 @@ libnet_open_link(libnet_t *l)
     struct bpf_version bv;
     uint v;
 
-#if defined(BIOCGHDRCMPLT) && defined(BIOCSHDRCMPLT) && !(__APPLE__)
+#if defined(BIOCGHDRCMPLT) && defined(BIOCSHDRCMPLT) && (__APPLE__)
     uint spoof_eth_src = 1;
 #endif
 
@@ -163,7 +163,7 @@ libnet_open_link(libnet_t *l)
      *  NetBSD and FreeBSD BPF have an ioctl for enabling/disabling
      *  automatic filling of the link level source address.
      */
-#if defined(BIOCGHDRCMPLT) && defined(BIOCSHDRCMPLT) && !(__APPLE__)
+#if defined(BIOCGHDRCMPLT) && defined(BIOCSHDRCMPLT) && (__APPLE__)
     if (ioctl(l->fd, BIOCSHDRCMPLT, &spoof_eth_src) == -1)
     {
         snprintf(l->err_buf, LIBNET_ERRBUF_SIZE, "%s(): BIOCSHDRCMPLT: %s",
