@@ -16,8 +16,8 @@ samples = arp cdp dhcp_discover get_addr icmp_timestamp icmp_unreach \
                   icmp_echo_cq \
                   smurf dot1x dns rpc_tcp rpc_udp mpls icmp_timeexceed \
                   fddi_tcp1 fddi_tcp2 tring_tcp1 tring_tcp2 icmp_redirect \
-                  bgp4_hdr bgp4_open bgp4_update bgp4_notification gre \
-                  ssdp synflood6_frag tftp ip_link ip_raw sebek hsrp \
+                  bgp4_hdr bgp4_open bgp4_update bgp4_notification gre ssdp \
+                  synflood6_frag tftp ip_link ip_raw sebek hsrp \
                   test_ipv4 test_ipv6_icmpv4 test_ipv4_options
 if INSTALL_SAMPLES
 bin_PROGRAMS = $(samples)
@@ -61,12 +61,12 @@ icmp6_unreach_SOURCES   = icmp6_unreach.c
 smurf_SOURCES           = smurf.c
 synflood6_SOURCES       = synflood6.c
 synflood6_frag_SOURCES  = synflood6_frag.c
-ssdp_SOURCES  		= ssdp.c
 bgp4_hdr_SOURCES        = bgp4_hdr.c
 bgp4_open_SOURCES       = bgp4_open.c
 bgp4_update_SOURCES     = bgp4_update.c
 bgp4_notification_SOURCES = bgp4_notification.c
 gre_SOURCES		= gre.c
+ssdp_SOURCES  	= ssdp.c
 ip_raw_SOURCES          = ip_raw.c
 ip_link_SOURCES		= ip_link.c
 sebek_SOURCES           = sebek.c
@@ -78,3 +78,4 @@ test_ipv6_icmpv4_SOURCES = test_ipv6_icmpv4.c
 EXTRA_DIST = libnet_test.h
 
 LDADD 			= $(top_builddir)/src/libnet.la
+AM_LDFLAGS = -L/opt/local/lib -lpcap
