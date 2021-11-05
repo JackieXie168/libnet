@@ -17,7 +17,7 @@ samples = arp cdp dhcp_discover get_addr icmp_timestamp icmp_unreach \
                   smurf dot1x dns rpc_tcp rpc_udp mpls icmp_timeexceed \
                   fddi_tcp1 fddi_tcp2 tring_tcp1 tring_tcp2 icmp_redirect \
                   bgp4_hdr bgp4_open bgp4_update bgp4_notification gre \
-                  synflood6_frag tftp ip_link ip_raw sebek hsrp \
+                  ssdp synflood6_frag tftp ip_link ip_raw sebek hsrp \
                   test_ipv4 test_ipv6_icmpv4 test_ipv4_options
 if INSTALL_SAMPLES
 bin_PROGRAMS = $(samples)
@@ -61,6 +61,7 @@ icmp6_unreach_SOURCES   = icmp6_unreach.c
 smurf_SOURCES           = smurf.c
 synflood6_SOURCES       = synflood6.c
 synflood6_frag_SOURCES  = synflood6_frag.c
+ssdp_SOURCES  		= ssdp.c
 bgp4_hdr_SOURCES        = bgp4_hdr.c
 bgp4_open_SOURCES       = bgp4_open.c
 bgp4_update_SOURCES     = bgp4_update.c
