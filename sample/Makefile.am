@@ -16,7 +16,7 @@ samples = arp cdp dhcp_discover get_addr icmp_timestamp icmp_unreach \
                   icmp_echo_cq \
                   smurf dot1x dns rpc_tcp rpc_udp mpls icmp_timeexceed \
                   fddi_tcp1 fddi_tcp2 tring_tcp1 tring_tcp2 icmp_redirect \
-                  bgp4_hdr bgp4_open bgp4_update bgp4_notification gre ssdp \
+                  bgp4_hdr bgp4_open bgp4_update bgp4_notification gre mdns ssdp \
                   synflood6_frag tftp ip_link ip_raw sebek hsrp \
                   test_ipv4 test_ipv6_icmpv4 test_ipv4_options
 if INSTALL_SAMPLES
@@ -66,6 +66,7 @@ bgp4_open_SOURCES       = bgp4_open.c
 bgp4_update_SOURCES     = bgp4_update.c
 bgp4_notification_SOURCES = bgp4_notification.c
 gre_SOURCES		= gre.c
+mdns_SOURCES		=mdns.c
 ssdp_SOURCES  	= ssdp.c
 ip_raw_SOURCES          = ip_raw.c
 ip_link_SOURCES		= ip_link.c
