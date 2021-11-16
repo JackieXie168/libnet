@@ -63,7 +63,7 @@ autoheader                      		&& \
 echo "- automake."              	&& \
 automake --add-missing --gnu	&& \
 echo "findished."               		&& \
-#./configure "$@"                && exit 0
+./configure "$@"                && exit 0
 exit 0
 fi
 

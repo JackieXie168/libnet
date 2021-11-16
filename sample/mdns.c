@@ -656,6 +656,8 @@ send_dns_sd(void) {
 	for (int isock = 0; isock < num_sockets; ++isock) {
 		if (mdns_discovery_send(sockets[isock]))
 			printf("Failed to send DNS-DS discovery: %s\n", strerror(errno));
+		/*else
+			printf("%d", sockets[isock]);*/
 	}
 
 	size_t capacity = 2048;
